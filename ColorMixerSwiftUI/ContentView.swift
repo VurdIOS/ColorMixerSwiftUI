@@ -57,12 +57,24 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ColorSliderView: View {
     @Binding var value: Double
+    
     @State var tintColor: Color
+    
+    @State private var  tfValue = ""
+    @State private var tfTitle = ""
+
+    
     
     var body: some View {
         HStack {
             Text("\(lround(value))").foregroundColor(.white)
             Slider(value: $value, in: 0...255, step: 1).tint(tintColor)
+            TextField(tfTitle, text: $tfValue) {
+                value = Double(tfValue) ?? value
+                tfTitle = ""
+            }
+            .frame(width: 50)
+            .textFieldStyle(.roundedBorder)
         }
     }
 }
@@ -81,7 +93,7 @@ struct ColorMixerView: View {
                     green: greenValue/255,
                     blue: blueValue/255
                 )
-            ) // тут создать свой модификатор
+            )
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 4))
     }
 }
