@@ -11,11 +11,7 @@ struct ContentView: View {
     @State private var redSliderValue = 100.0
     @State private var greenSliderValue = 100.0
     @State private var blueSliderValue = 100.0
-    
-    @State private var redTFValue = ""
-    @State private var greenTFValue = ""
-    @State private var blueTFValue = ""
-    
+     
     var body: some View {
         ZStack {
             Color(.systemBlue)
@@ -81,7 +77,7 @@ struct ColorMixerView: View {
                     green: greenValue/255,
                     blue: blueValue/255
                 )
-            ) // тут создать свой модификатор
+            )
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 4))
     }
 }
