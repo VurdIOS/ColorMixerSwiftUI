@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var redSliderValue = 100.0
     @State private var greenSliderValue = 100.0
-    @State private var blueSliderValue = 100.0
+    @State private var blueSliderValue = 100.2
      
     var body: some View {
         ZStack {
