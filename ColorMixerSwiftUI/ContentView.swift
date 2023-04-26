@@ -53,7 +53,8 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ColorSliderView: View {
     @Binding var value: Double
-    @State var tintColor: Color
+    
+    var tintColor: Color
     
     var body: some View {
         HStack {
@@ -64,9 +65,9 @@ struct ColorSliderView: View {
 }
 
 struct ColorMixerView: View {
-    @Binding var redValue: Double
-    @Binding var greenValue: Double
-    @Binding var blueValue: Double
+    var redValue: Double
+    var greenValue: Double
+    var blueValue: Double
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
